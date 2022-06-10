@@ -2,7 +2,7 @@ import * as io from "socket.io";
 import express from "express";
 import http from "http";
 
-export default class VideoServer {
+export class VideoServer {
   public server: http.Server;
   private ws: io.Server;
   private user: any;
@@ -12,7 +12,6 @@ export default class VideoServer {
     this.server = server;
     this.ws = new io.Server(this.server);
     this.user = {};
-
     this.roomSocket = {};
   }
 

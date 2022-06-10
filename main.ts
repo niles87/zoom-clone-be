@@ -1,8 +1,11 @@
 import express from "express";
 import mongoose from "mongoose";
 import path from "path";
+import { Server } from "./typing/server";
+import { VideoServer } from "./typing/video-server";
+import { UserController, RoomController } from "./controllers";
 import { createServer } from "http";
-import { Server, Socket } from "socket.io";
+// import { Server, Socket } from "socket.io";
 
 import { config } from "./config/db";
 import routes from "./routes";
@@ -11,11 +14,11 @@ const app = express();
 const PORT = process.env.PORT || 4000;
 
 const server = createServer(app);
-const ws = new Server(server);
+// const ws = new Server(server);
 
-const user: any = {};
+// const user: any = {};
 
-const roomSocket: any = {};
+// const roomSocket: any = {};
 
 // ws.on("connection", (socket: Socket) => {
 //   socket.on("joining room", (roomId) => {
@@ -79,13 +82,13 @@ mongoose.connection.on("error", (err: any) => {
 app.use("/user", routes.users);
 app.use("/room", routes.rooms);
 
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static(path.join(__dirname, "../client/build")));
-}
+// if (process.env.NODE_ENV === "production") {
+//   app.use(express.static(path.join(__dirname, "../client/build")));
+// }
 
-app.get("*", (req: express.Request, res: express.Response) => {
-  res.sendFile(path.join(__dirname, "../client/build/index.html"));
-});
+// app.get("*", (req: express.Request, res: express.Response) => {
+//   res.sendFile(path.join(__dirname, "../client/build/index.html"));
+// });
 
 server.listen(PORT, () => {
   console.log(`App listening on http://localhost:${PORT}`);

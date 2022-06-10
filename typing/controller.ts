@@ -6,7 +6,7 @@ import {
   RequestHandler,
 } from "express";
 
-enum Methods {
+export enum Methods {
   GET = "GET",
   POST = "POST",
   PUT = "PUT",
