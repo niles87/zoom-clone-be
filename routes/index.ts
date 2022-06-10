@@ -1,7 +1,7 @@
-import users from "./user";
-import rooms from "./room";
+// import users from "./user";
+// import rooms from "./room";
 
-export default {
-  users,
-  rooms,
-};
+// export default {
+//   users,
+//   rooms,
+// };

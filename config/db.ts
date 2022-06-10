@@ -8,5 +8,5 @@ type config = {
 
 export const config: config = {
   // @ts-ignore
-  database: process.env.DB_CONNECTION,
+  database: process.env.MONGODB_URI,
 };

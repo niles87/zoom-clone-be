@@ -33,8 +33,10 @@ export class Server {
 
   async initMongoose(uri: string, options: any): Promise<void> {
     try {
-      await this.mongoose.connect(uri, options);
-      console.log("mongodb connected");
+      this.mongoose.connect(uri, options);
+      this.mongoose.connection.on("connected", () => {
+        console.log("mongodb connected");
+      });
     } catch (err: any) {
       console.log(err);
     }

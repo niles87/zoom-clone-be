@@ -61,7 +61,7 @@ export default class UserController extends Controller {
     try {
       const user = await User.findOne({ email: req.body.email });
       if (user) {
-        const validUser = await user.comparePassword(req.body.email);
+        const validUser = await user.comparePassword(req.body.password);
         if (validUser) {
           const updatedUser = await User.findOneAndUpdate(
             { _id: user._id },
