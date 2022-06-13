@@ -3,34 +3,34 @@ import User from "../model/User";
 import Controller, { Methods } from "../typing/controller";
 
 export default class UserController extends Controller {
-  public path = "/";
+  public path = "/api/users";
   protected routes = [
     {
-      path: "/login",
+      path: this.path + "/login",
       method: Methods.POST,
       handler: this.handleLogin,
       localMiddleware: [],
     },
     {
-      path: "/signup",
+      path: this.path + "/signup",
       method: Methods.POST,
       handler: this.handleSignup,
       localMiddleware: [],
     },
     {
-      path: "/logout/:id",
+      path: this.path + "/logout/:id",
       method: Methods.PUT,
       handler: this.handleLogout,
       localMiddleware: [],
     },
     {
-      path: "/friends/:id",
+      path: this.path + "/friends/:id",
       method: Methods.GET,
       handler: this.handleGetFriends,
       localMiddleware: [],
     },
     {
-      path: "/:id",
+      path: this.path + "/:id",
       method: Methods.GET,
       handler: this.handleUserInfo,
       localMiddleware: [],

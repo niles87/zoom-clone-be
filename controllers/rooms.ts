@@ -3,22 +3,22 @@ import Room from "../model/Room";
 import Controller, { Methods } from "../typing/controller";
 
 export default class RoomController extends Controller {
-  path = "/";
+  path = "/api/rooms";
   routes = [
     {
-      path: "/",
+      path: this.path + "/",
       method: Methods.GET,
       handler: this.handleViewRooms,
       localMiddleware: [],
     },
     {
-      path: "/createroom",
+      path: this.path + "/createroom",
       method: Methods.POST,
       handler: this.handleCreateRoom,
       localMiddleware: [],
     },
     {
-      path: "/addmember/:id",
+      path: this.path + "/addmember/:id",
       method: Methods.PUT,
       handler: this.handleAddMember,
       localMiddleware: [],
