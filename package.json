@@ -8,7 +8,8 @@
     "start": "node dist/main.js",
     "dev": "nodemon dist/main.js",
     "compiler": "tsc -w",
-    "compile": "tsc -b"
+    "compile": "tsc -b",
+    "heroku-postbuild": "npm run compile"
   },
   "author": "niles87",
   "license": "MIT",
