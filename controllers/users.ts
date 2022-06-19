@@ -6,31 +6,31 @@ export default class UserController extends Controller {
   public path = "/api/users";
   protected routes = [
     {
-      path: this.path + "/login",
+      path: "/login",
       method: Methods.POST,
       handler: this.handleLogin,
       localMiddleware: [],
     },
     {
-      path: this.path + "/signup",
+      path: "/signup",
       method: Methods.POST,
       handler: this.handleSignup,
       localMiddleware: [],
     },
     {
-      path: this.path + "/logout/:id",
+      path: "/logout/:id",
       method: Methods.PUT,
       handler: this.handleLogout,
       localMiddleware: [],
     },
     {
-      path: this.path + "/friends/:id",
+      path: "/friends/:id",
       method: Methods.GET,
       handler: this.handleGetFriends,
       localMiddleware: [],
     },
     {
-      path: this.path + "/:id",
+      path: "/:id",
       method: Methods.GET,
       handler: this.handleUserInfo,
       localMiddleware: [],
